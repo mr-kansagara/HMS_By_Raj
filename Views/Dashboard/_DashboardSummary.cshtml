@@ -1,0 +1,44 @@
+﻿@model HMS.Models.DashboardViewModel.DashboardDataViewModel
+
+<hr />
+<section class="content">
+    <div class="row">
+
+        @foreach (var roleCount in Model.userRolesCountsModel)
+        {
+            <div class="col-12 col-sm-6 col-md-3">
+                <a asp-action="Index" asp-controller="UserManagement">
+                    <div class="info-box">
+                        <span class="box"><img src="@roleCount.DashboardImage" title="@roleCount.RoleName" style="height: 150px; width: 150px;"></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">@roleCount.RoleName</span>
+                            <h2>@roleCount.UserCounts</h2>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        }
+        <div class="col-12 col-sm-6 col-md-3">
+            <a asp-action="Index" asp-controller="Medicines">
+                <div class="info-box">
+                    <span class="box"><img src="/images/dashboard/medicine.png"></span>
+                    <div class="info-box-content">
+                        <span class="info-box-text">Medicines</span>
+                        <h2>@Model.DashboardSummaryViewModel.TotalMedicines</h2>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3">
+            <a asp-action="Index" asp-controller="Bed">
+                <div class="info-box">
+                    <span class="box"><img src="/images/dashboard/hospital-bed.png"></span>
+                    <div class="info-box-content">
+                        <span class="info-box-text">Beds</span>
+                        <h2>@Model.DashboardSummaryViewModel.TotalBeds</h2>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>

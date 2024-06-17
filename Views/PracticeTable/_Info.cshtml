@@ -1,0 +1,19 @@
+@model HMS.Models.PracticeTable.PracticeTableCRUDModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="card card-primary card-outline card-tabs">
+    <div class="card-body">
+        <div class="tab-content" id="tabContent">
+            <div class="tab-pane fade show active" id="divTab01" role="tabpanel" aria-labelledby="divTab01">
+                <partial name="_Details" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('input:checkbox').attr('disabled', 'true');
+</script>
